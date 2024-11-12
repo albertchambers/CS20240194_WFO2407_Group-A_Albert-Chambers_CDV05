@@ -1,0 +1,155 @@
+// Imports
+@use "index.scss" as i;
+
+// Global Styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// App Container
+.App {
+  text-align: center;
+  font-family: i.$font-body;
+  background-color: i.$color-background;
+}
+
+// Logo Styles
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+// Header Styles
+.App-header {
+  background-color: i.$color-background;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: i.$color-darkblue;
+}
+
+// Link Styles
+.App-link {
+  color: i.$color-lime;
+}
+
+input,
+textarea {
+  font-family: i.$font-body;
+}
+
+// Keyframe Animations
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Media Queries
+// Small screens (mobile)
+@media screen and (max-width: 576px) {
+  .App-header {
+    font-size: calc(12px + 2vmin);
+  }
+
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App-link {
+    font-size: 1.2rem;
+  }
+}
+
+// Medium screens (tablets)
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .App-header {
+    font-size: calc(12px + 2vmin);
+    padding: 1rem;
+  }
+
+  .App-logo {
+    height: 35vmin;
+  }
+
+  .App-link {
+    font-size: 1.5rem;
+  }
+}
+
+// Large screens (laptops and small desktops)
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .App-header {
+    font-size: calc(14px + 2vmin);
+  }
+
+  .App-logo {
+    height: 40vmin;
+  }
+
+  .App-link {
+    font-size: 1.6rem;
+  }
+}
+
+// Extra large screens (large desktops)
+@media screen and (min-width: 1025px) {
+  .App-header {
+    font-size: calc(16px + 2vmin);
+  }
+
+  .App-logo {
+    height: 45vmin;
+  }
+
+  .App-link {
+    font-size: 1.8rem;
+  }
+}
+
+// Additional Styles for Flexbox Responsiveness
+.App-header {
+  flex-direction: column;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 3rem;
+  }
+
+  @media (min-width: 1025px) {
+    padding-left: 5rem;
+  }
+}
+
+// Grid System
+// Future layout of projects
+.project-list {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;  // Single column on smaller screens
+  }
+
+  @media (min-width: 769px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  // 2+ columns for medium screens
+  }
+}
