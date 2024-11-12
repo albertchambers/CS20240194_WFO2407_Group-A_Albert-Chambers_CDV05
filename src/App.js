@@ -1,15 +1,15 @@
 // @ts-check
 
-import logo from './logo.svg';
 import './App.scss';
 import React from 'react';
-import { Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/layout-index';
 
 function App() {
   return (
     <>
     <Routes>
-      <Route path="/" element={<layout />} />
+      <Route path="/" element={<Layout />} />
     </Routes>
     </>
   )
